@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl'
   gem 'spork-rails'
+  gem 'faker'
 end
 
 # User accounts / login
