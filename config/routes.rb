@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :clients
+  get 'welcome/index'
+
+  devise_for :clients, :path => 'users'
   devise_for :admins
+  
+  resources :clients do
+    resources :client_infos
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
