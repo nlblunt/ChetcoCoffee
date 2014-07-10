@@ -12,5 +12,6 @@ RSpec.describe Product, :type => :model do
   
   it "has a price" do
     expect(FactoryGirl.build(:product, price: nil)).not_to be_valid
+    #expect(FactoryGirl.build(:product, price: 'Alot')).to be_a(Float)
   end
 end
