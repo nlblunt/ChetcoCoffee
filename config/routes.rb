@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-
+  get 'cpanel/index'
+  
   devise_for :clients, :path => 'users'
   devise_for :admins
   

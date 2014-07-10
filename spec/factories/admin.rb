@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :admin do |f|
     f.email {Faker::Internet.email}
-    f.password {Faker::Internet.password}
-    #f.password_confirmation f.password
+    f.password 'password'
+    f.password_confirmation 'password'
   end
 end
