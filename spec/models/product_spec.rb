@@ -18,4 +18,11 @@ RSpec.describe Product, :type => :model do
   it "has a price greater than $0.00" do
     expect(FactoryGirl.build(:product, price: '-1.0')).not_to be_valid
   end
+  
+  it "adds to shopping cart" do
+    client = FactoryGirl.create(:client_info)
+    p = FactoryGirl.create(:product)
+    p.add_to_cart(client.id, p.id, 1)
+    expect(client.cart.cart_items.count).to be > 0
+  end
 end

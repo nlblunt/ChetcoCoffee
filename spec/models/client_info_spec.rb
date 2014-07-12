@@ -23,4 +23,11 @@ RSpec.describe ClientInfo, :type => :model do
   it "has a valid address" do
     expect(FactoryGirl.build(:client_info, address: nil)).not_to be_valid
   end
+  
+  it "creates an associated shopping cart" do
+    c = FactoryGirl.create(:client_info)
+    #c.create_shopping_cart
+    expect(Cart.count).to be > 0
+    #expect change(c.create_shopping_cart, :count).by(1)
+  end
 end
