@@ -23,21 +23,29 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# For testing
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
-  gem 'factory_girl'
-  gem 'spork-rails'
-  gem 'faker'
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring',        group: :development
+
+group :test, :development do
+	gem 'rspec'
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
+	gem 'capybara'
+	gem 'database_cleaner'
+	gem 'selenium-webdriver'
+	gem 'teaspoon'
+	gem 'phantomjs'
 end
 
-# User accounts / login
-gem 'devise'
+gem 'bower-rails'
 
 gem 'bootstrap-sass'
-
 gem 'autoprefixer-rails'
+gem 'angular-rails-templates'
 
+gem 'paperclip'
+
+gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -49,6 +57,3 @@ gem 'autoprefixer-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
