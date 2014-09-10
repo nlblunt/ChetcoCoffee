@@ -1,9 +1,7 @@
-<h1>Chetco Roasting Coffee Company</h1>
-<%= link_to "Admin Sign Up", new_admin_registration_path %>
-<%= link_to "Admin Sign In", new_admin_session_path %>
+<div>
+	<div class='view-container'>
+		<div ng-view class='view-frame animate-view'></div>
+	</div>
+</div>
 
-<% if admin_signed_in? %>
-	Admin Signed In
-	<%= link_to "Admin Control Panel", cpanel_path %>
-	<%= link_to "Admin Log Out", destroy_admin_session_path, :method => :delete %>
-<% end %>
+

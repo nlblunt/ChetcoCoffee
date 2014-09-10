@@ -1,0 +1,11 @@
+<h1>Chetco Roasting Coffee Company</h1>
+
+<a href="/admin">Control Panel</a>
+<%= link_to "Admin Sign Up", new_admin_registration_path %>
+<%= link_to "Admin Sign In", new_admin_session_path %>
+
+<% if admin_signed_in? %>
+	Admin Signed In
+	<%= link_to "Admin Control Panel", cpanel_path %>
+	<%= link_to "Admin Log Out", destroy_admin_session_path, :method => :delete %>
+<% end %>

@@ -20,6 +20,6 @@
 //= require angular-resource/angular-resource
 // require directives/directive_admin
 // require services/services
-// require controllers/controllers
+//= require controllers/controllers
 //= require_tree .
 //= require bootstrap-sprockets
