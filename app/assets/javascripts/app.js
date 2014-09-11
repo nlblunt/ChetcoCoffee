@@ -6,6 +6,7 @@
         'ngRoute',
         'ngResource',
         'appControllers',
+        'appServices',
     ]);
     
     chetcocoffee.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider)
@@ -24,4 +25,6 @@
             controller: "adminController"
         });
     }]);
+    
+
 })();
