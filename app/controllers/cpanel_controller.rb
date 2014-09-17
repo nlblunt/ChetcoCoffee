@@ -1,5 +1,5 @@
 class CpanelController < ApplicationController
-  before_filter :check_auth
+  #before_filter :check_auth
   
   def index
     # Check for admin sign in
@@ -20,8 +20,11 @@ class CpanelController < ApplicationController
       end
     else
       respond_to do |format|
-        format.json {render status: :error, nothing: true}
-        format.html {render status: :error, nothing: true}
+        #create a blank admin
+        @admin = Admin.new
+        @admin.id = 0
+        format.json {render :admin_check}#nothing: true}
+        format.html {render :admin_check}#nothing: true}
       end
     end
   end

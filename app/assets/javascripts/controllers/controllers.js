@@ -7,29 +7,31 @@ appControllers.controller('homeController', ['$scope', function($scope)
 
 appControllers.controller('adminController', ['$scope', 'adminFactory', '$http', function($scope, adminFactory, $http)
 {
-    var session = "";
+    this.session;
 
-    session = adminFactory.adminCheck();
-    //session = "asas";
-    $scope.session = session;
-    //alert(test);
-    //$scope.session = s.admin;
-    //$scope.session = "Another";
-    //adminFactory.adminLogout();
-    //adminFactory.adminLogin();
+    adminFactory.adminCheck().$promise
+    .then(function(result)
+        {
+            //alert(result.id);
+            session = result;
+            $scope.session = result;
+        });
     
     this.adminLogin = function()
     {
-        adminFactory.adminLogin();
-        $scope.session = adminFactory.adminCheck();
+        adminFactory.adminLogin()
+        .then(function(adminSession)
+        {
+            session = adminSession;
+            $scope.session = adminSession;
+        });
     };
     
     this.adminLogout = function()
     {
-        adminFactory.adminLogout(session.id);
-        session = "";
-        //session = adminFactory.adminCheck();
-        alert(session);
+        adminFactory.adminLogout(session.id)
+
+        session = {"id": 0};
         $scope.session = session;
     };
 }]);

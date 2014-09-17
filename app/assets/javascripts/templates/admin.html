@@ -1,12 +1,14 @@
-AngularJS Admin
+
 <section ng-controller='adminController as adminCtrl'>
-<div ng-if="session.id">{{session}}
+AngularJS Admin
+{{session1}}
+<div ng-if="session.id > 0">{{session}}
     <a href ng-click="adminCtrl.adminLogout()">Logout</a>
     <a href="/">Home</a>
 </div>
 
-<div ng-if="session === ''">
-Need to login
+<div ng-if="session.id === 0">
+Need to login{{session}}
     <div><a href ng-click="adminCtrl.adminLogin()">Login</a></div>
     <a href="/">Home</a>
 </div>

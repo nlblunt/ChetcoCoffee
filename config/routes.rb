@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'admins/admin_check' => 'cpanel#admin_check'
   
   devise_for :clients, :path => 'users'
-  devise_for :admins
+  devise_for :admins,  controllers: { sessions: "admins/sessions" }
   
   resources :clients do
     resources :client_infos
