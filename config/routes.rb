@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   get 'cpanel/index'
+  get 'admin' => redirect('/#admin')
   get 'admins/admin_check' => 'cpanel#admin_check'
   
   devise_for :clients, :path => 'users'
@@ -63,4 +64,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+    get '*path' => redirect('/')
 end

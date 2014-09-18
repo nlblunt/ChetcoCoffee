@@ -7,6 +7,7 @@
         'ngResource',
         'appControllers',
         'appServices',
+        'adminDirectives',
     ]);
     
     chetcocoffee.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider)
@@ -23,6 +24,9 @@
         {
            templateUrl: "admin.html",
             controller: "adminController"
+        })
+        .otherwise({
+            redirectTo: '/'
         });
     }]);
     

@@ -18,13 +18,13 @@ appServices.factory('adminFactory', ['$resource', '$http', '$q', function($resou
         };
 
         //Logs an admin in and returns the session id
-        self.adminLogin = function(data)
+        self.adminLogin = function(login)
         {
             //Setup a deferred promise
             var deferred = $q.defer();
 
             //Create a new adminSession object.  Save to backend for authorization.
-            var admin = new adminSession({email: "nico@gmail.com", password: "password"});
+            var admin = new adminSession({email: login.email, password: login.password});
             
             //Attempt to save the new session.  If success, return session id.
             admin.$save()
