@@ -1,5 +1,4 @@
 class CpanelController < ApplicationController
-  #before_filter :check_auth
   
   def index
       #AngularJS App: Redirect all calls to home ('/')
@@ -20,15 +19,6 @@ class CpanelController < ApplicationController
         @admin.id = 0
         format.json {render :admin_check}#nothing: true}
         format.html {render :admin_check}#nothing: true}
-      end
-    end
-  end
-  
-  def check_auth
-    authenticate_or_request_with_http_basic do |username,password|
-      resource = Admin.find_by_email(username)
-      if resource.valid_password?(password)
-        sign_in :admin, resource
       end
     end
   end

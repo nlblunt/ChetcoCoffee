@@ -7,9 +7,10 @@ class Admins::SessionsController < Devise::SessionsController
         		sign_in :admin, resource
 
         		render status: :ok, nothing: true
-      		end
-     
-      	else
+      		else
+            render status: :forbidden, nothing: true
+          end
+      else
       		render status: :forbidden, nothing: true
     	end
     end
