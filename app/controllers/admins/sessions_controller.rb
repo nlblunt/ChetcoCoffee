@@ -1,3 +1,4 @@
+#Class for loging in Admins through API
 class Admins::SessionsController < Devise::SessionsController
     def create
       	resource = Admin.find_by_email(params[:email])

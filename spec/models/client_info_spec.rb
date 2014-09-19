@@ -1,5 +1,5 @@
 require 'rails_helper'
-require './spec/factories/client_info.rb'
+#require './spec/factories/client_info.rb'
 
 RSpec.describe ClientInfo, :type => :model do
   it "belongs to a client" do

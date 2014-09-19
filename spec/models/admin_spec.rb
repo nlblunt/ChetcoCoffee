@@ -1,5 +1,5 @@
 require 'rails_helper'
-require './spec/factories/admin.rb'
+#require './spec/factories/admin.rb'
 
 RSpec.describe Admin, :type => :model do
   it "creates a new account" do

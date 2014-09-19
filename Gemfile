@@ -27,14 +27,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :test, :development do
-	gem 'rspec'
 	gem 'rspec-rails'
-	gem 'factory_girl_rails'
+	gem 'factory_girl_rails', :require => false
 	gem 'capybara'
 	gem 'database_cleaner'
 	gem 'selenium-webdriver'
 	gem 'teaspoon'
 	gem 'phantomjs'
+	gem 'faker'
 end
 
 gem 'bower-rails'

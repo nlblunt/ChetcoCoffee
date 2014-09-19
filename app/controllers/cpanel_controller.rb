@@ -2,13 +2,8 @@ class CpanelController < ApplicationController
   #before_filter :check_auth
   
   def index
-    # Check for admin sign in
-    if(admin_signed_in?)
-      render 'index'
-    else
-      #Not valid admin
+      #AngularJS App: Redirect all calls to home ('/')
       redirect_to welcome_index_path
-    end
   end
   
   def admin_check
