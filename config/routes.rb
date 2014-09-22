@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :clients, :path => 'users'
   devise_for :admins,  controllers: { sessions: "admins/sessions" }
   
+  resources :products
   resources :clients do
     resources :client_infos
   end
