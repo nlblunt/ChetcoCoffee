@@ -54,82 +54,92 @@ appServices.factory('adminFactory', ['$resource', '$http', '$q', function($resou
     return self;
 }]);
 
-
-
-//Factory for admin actions.
-appServices.factory('adminFactoryold', ['$resource','$http','$q', function($resource, $http, $q)
+appServices.factory('productFactory', ['$resource', '$http', '$q', function($resource, $http, $q)
 {
-    //Empty factory for adminFactory.
-    var factory = {};
-    var currentSession = [];
-    var response = {};
-    
-    //For $resource function
-    var adminSession = $resource('/admins/sign_in', {format: 'json'},
-    {
-        admin_check: {method:'GET', url:'/admins/admin_check'}
-    });
-    var adminRegistration
-    
-    //factory.adminCheck = function()
-    //{
-    //    var deferred = $q.defer();
-    //    adminSession.admin_check({
-    //        function(response)
-    //        {
-    //            deferred.resolve(response);
-    //        },
-    //        function(response)
-    //        {
-    //            deferred.reject(response);
-    //        });
+    var self = {};
 
-    //    return deferred.promise;
-    //    });
-        
-        //$http({url: '/admins/admin_check.json',
-        //        method: 'GET',
-        //    format: 'JSON',
-        //})
-        //.then(function(result)
-    //    {
-      //      return result;
-        //});
-        //.success(function(result)
-        //{
-        //    alert("Succes");
-        //    response.admin = result;
-        //})
-        //.error(function(data, status)
-    //    {
-     //       alert("Error");
-       //});
-        
-        //return response;
-    //};
-    
-    factory.adminLogin = function(data)
-    {
-      //adminSession.$save({id: 1, name: "test"});
-      var session = {};
-      var admin = new adminSession({email: "nico@gmail.com", password: "password"});
-      admin.$save();
-    
-      //return adminSession.admin_check();
-      var promise = adminSession.admin_check();
-      promise.then(
-        function(response)
+    var product = $resource('/products/:id', {format: 'json'},
         {
-            return response;
+            'update': {method: 'PATCH'}
         });
-    };
-    
-    factory.adminLogout = function(cSession)
+
+    self.getProducts = function()
     {
-        var admin = $resource('/admins/sign_out');
-        admin.delete({id: cSession});
+        return product.query();
+    };
+
+    self.getProduct = function(prodID)
+    {
+        var deferred = $q.defer();
+
+        product.get({id: prodID})
+        .$promise.then(
+            function(data)
+            {
+                deferred.resolve(data);
+            },
+            function()
+            {
+                deferred.reject("Error");
+            });
+        return deferred.promise;
     };
     
-    //Default return of factory
-    return factory;
-}]);
+    self.addProduct = function (prod)
+    {
+        //Setup deferred promise
+        var deferred = $q.defer();
+
+        //Create a new product object.  Save to backend.
+        var newProduct = new product(prod);
+
+        newProduct.$save()
+        .then(
+            function()
+            {
+                deferred.resolve();
+            },
+            function()
+            {
+                deferred.reject("Error");
+            });
+        return deferred.promise;
+    };
+
+    self.removeProduct = function(prodID)
+    {
+        var deferred = $q.defer();
+
+        //Delete product using prodID.
+        product.delete({id: prodID})
+        .$promise.then(
+            function()
+            {
+                deferred.resolve();
+            },
+            function()
+            {
+                deferred.reject("Error removing product");
+            });
+        return deferred.promise;
+    };
+
+    self.editProduct = function(edit)
+    {
+        var deferred = $q.defer();
+
+        product.update({id: edit.id}, edit)
+        .$promise.then(
+            function()
+            {
+                deferred.resolve();
+            },
+            function()
+            {
+                deferred.reject("Error");
+            });
+        return deferred.promise;
+    };
+
+    return self;
+}])

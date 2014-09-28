@@ -22,6 +22,35 @@ class ProductsController < ApplicationController
 		end	
 	end
 
+	def destroy
+		product = Product.find(params[:id])
+		product.delete
+
+		render nothing: true
+	end
+
+	def show
+		@product = Product.find_by_id(params[:id])
+
+		if(@product.valid?)
+			respond_to do |format|
+				format.json {render :show}
+				format.html {render :show}
+			end
+		else
+			respond_to do |format|
+				format.json {render status: :error}
+				format.html {render status: :error}
+			end
+		end
+	end
+
+	def update
+		@product = Product.find_by_id(params[:id])
+
+		@product.update_attributes(product_params);
+		render nothing: true
+	end
 private
 
 	def product_params

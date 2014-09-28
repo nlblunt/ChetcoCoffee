@@ -36,4 +36,15 @@ RSpec.describe ProductsController, :type => :controller do
 			end
 		end
 	end
+
+	describe "DELETE 'destroy'" do
+		it "Removes a product with a valid id" do
+			@tempProduct = FactoryGirl.create(:product)
+			expect((Product.all).count).to eq(1)
+
+			delete :destroy, {id: @tempProduct.id}
+			expect((Product.all).count).to eq(0)
+			expect(response.status).to eq(200)
+		end
+	end
 end

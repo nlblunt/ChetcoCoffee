@@ -39,3 +39,35 @@ app.directive('adminContent', function()
 		templateUrl: 'admin_templates/admin_content.html'
 	};
 });
+
+app.directive('adminProducts', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'admin_templates/admin_products.html'
+	};
+});
+
+app.directive('adminOverview', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'admin_templates/admin_overview.html'
+	};
+});
+
+app.directive('adminOrders', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'admin_templates/admin_orders.html'
+	};
+});
+
+app.directive('adminCustomers', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'admin_templates/admin_customers.html'
+	};
+});

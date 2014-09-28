@@ -1,4 +1,6 @@
-<div ng-if="session.id > 0">
-    <a href ng-click="adminCtrl.adminLogout()">Logout</a><br>
-    <a href="/">Home</a>
-</div>
+    <li><a href ng-click="adminCtrl.adminLogout()">Logout</a></li>
+    <li><a href="/">Home</a></li>
+<section ng-if="session.id > 0">
+    <li><a href ng-click="adminCtrl.adminLogout()">Logout</a></li>
+    <li><a href="/">Home</a></li>
+</section>

@@ -1,5 +1,16 @@
-Overview<br>
-Orders<br>
-Products<br>
-Customers<br>
-<admin-logout></admin-logout>
+<ul class="nav nav-pills nav-stacked">
+<li ng-class="{active:adminCtrl.navIsSelected('overview')}">
+	<a href ng-click="adminCtrl.navSetSelected('overview')">Overview</a>
+</li>
+<li ng-class="{active:adminCtrl.navIsSelected('orders')}">
+	<a href ng-click="adminCtrl.navSetSelected('orders')">Orders</a>
+</li>
+<li ng-class="{active:adminCtrl.navIsSelected('products')}">
+	<a href ng-click="adminCtrl.navSetSelected('products')">Products</a>
+</li>
+<li ng-class="{active:adminCtrl.navIsSelected('customers')}">
+	<a href ng-click="adminCtrl.navSetSelected('customers')">Customers</a>
+</li>
+<li><a href ng-click="adminCtrl.adminLogout()">Logout</a></li>
+<li><a href="/">Home</a></li>
+</ul>

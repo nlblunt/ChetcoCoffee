@@ -1,0 +1,65 @@
+<div class="row">
+<h3>Products oh Yea!!!</h3>
+<a href ng-click="addProductSelected='true'">Add product</a>
+<a href ng-click="addProductSelected='false'" ng-show="addProductSelected">Cancel</a>
+</div>
+
+<div class="row">
+<form class="form col-md-4" role="form" name="admin_addProduct" novalidate ng-show="addProductSelected">
+	<div class="form-group">
+		<label for="name">Product Name</label>
+		<input type="text" class="form-control" id="name" ng-model="prod.name" placeholder="Product Name" required>
+	</div>
+		<div class="form-group">
+		<label for="description">Product Description</label>
+		<input type="description" class="form-control" id="description" ng-model="prod.description" placeholder="Product description" required>
+	</div>
+	<div class="form-group">
+		<label for="price">Product Price</label>
+		<input type="text" class="form-control" id="price" ng-model="prod.price" placeholder="Product Price" required>
+	</div>
+	<button ng-click="adminCtrl.addProduct(prod)" ng-disabled="admin_addProduct.$invalid">Add Product</button><br>
+</form>
+</div>
+
+
+<div class="row">
+<form class="form col-md-4" role="form" name="admin_editProduct" novalidate ng-show="editProductSelected">
+	<div class="form-group">
+		<input type="text" class="hidden" id="id" ng-model="edit.id">
+	</div>
+	<div class="form-group">
+		<label for="name">Product Name</label>
+		<input type="text" class="form-control" id="name" ng-model="edit.name" placeholder="Product Name" required>
+	</div>
+		<div class="form-group">
+		<label for="description">Product Description</label>
+		<input type="description" class="form-control" id="description" ng-model="edit.description" placeholder="Product description" required>
+	</div>
+	<div class="form-group">
+		<label for="price">Product Price</label>
+		<input type="text" class="form-control" id="price" ng-model="edit.price" placeholder="Product Price" required>
+	</div>
+	<button ng-click="saveEditProduct(edit)" ng-disabled="admin_editProduct.$invalid">Save Product</button>
+	<button ng-click="hideEdit()">Cancel</button>
+</form>
+</div>
+
+<div class="row">
+<table class='table'>
+	<tr>
+		<th>Name:</th>
+		<th>Description:</th>
+		<th>Price:</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr ng-repeat="product in products">
+	<td>{{product.name}}</td>
+	<td>{{product.description}}</td>
+	<td>{{product.price | currency}}</td>
+	<td ng-click="editProduct(product.id)"><a href>Edit</a></td>
+	<td ng-click="adminCtrl.removeProduct(product.id)"><a href>Delete</a></td>
+	</tr>
+</table>
+</div>
