@@ -71,3 +71,52 @@ app.directive('adminCustomers', function()
 		templateUrl: 'admin_templates/admin_customers.html'
 	};
 });
+
+/************************************************************/
+app.directive('homeIndex', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'home_templates/home_index.html'
+	};
+});
+
+app.directive('homeMenu', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'home_templates/home_menu.html'
+	};
+});
+
+app.directive('homeNavbar', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'home_templates/home_navbar.html'
+	};
+});
+
+app.directive('homeFeatured', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'home_templates/home_featured.html'
+	};
+});
+
+app.directive('homeConnect', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'home_templates/home_connect.html'
+	};
+});
+
+app.directive('homeBlog', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'home_templates/home_blog.html'
+	};
+});

@@ -1,0 +1,17 @@
+<ul>
+	<li ng-class="{current:homeCtrl.navIsSelected('index')}">
+		<a href ng-click="homeCtrl.navSetSelected('index')">Home</a>
+	</li>
+	<li ng-class="{current:homeCtrl.navIsSelected('menu')}">
+		<a href ng-click="homeCtrl.navSetSelected('menu')">Menu</a>
+	</li>
+	<li>
+		<a href="locations.html">Locations</a>
+	</li>
+	<li>
+		<a href="about.html">About</a>
+	</li>
+	<li>
+		<a href="/admin">Admin</a>
+	</li>
+</ul>

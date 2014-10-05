@@ -2,7 +2,18 @@ var appControllers = angular.module('appControllers', ['appServices']);
 
 appControllers.controller('homeController', ['$scope', function($scope)
 {
-        
+    // Holder for navbar
+    this.nav = 'index';
+
+    this.navIsSelected = function(selected)
+    {
+        return this.nav === selected;
+    };
+
+    this.navSetSelected = function(selected)
+    {
+        this.nav = selected;
+    }; 
 }]);
 
 appControllers.controller('adminController', ['$scope', 'adminFactory', 'productFactory', '$http', function($scope, adminFactory, productFactory, $http)
