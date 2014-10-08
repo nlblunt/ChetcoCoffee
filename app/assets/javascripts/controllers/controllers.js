@@ -1,9 +1,11 @@
 var appControllers = angular.module('appControllers', ['appServices']);
 
-appControllers.controller('homeController', ['$scope', function($scope)
+appControllers.controller('homeController', ['$scope', 'productFactory', function($scope, productFactory)
 {
     // Holder for navbar
     this.nav = 'index';
+
+    $scope.products = productFactory.getProducts();
 
     this.navIsSelected = function(selected)
     {

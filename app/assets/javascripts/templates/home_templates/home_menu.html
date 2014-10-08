@@ -1,1 +1,22 @@
-Menu
+<div id="body">
+	<div id="figure">
+		<img src="images/headline-menu.jpg" alt="Image">
+		<span>Roasting the best... ever.</span>
+	</div>
+	<div>
+		<a href="menu.html" class="whatshot">What&#39;s Hot</a>
+		<div>
+			<ul>
+				<li ng-repeat="product in products">
+					<img ng-src="images/coffee1.jpg">
+					<div>
+						<a href="">{{product.name}}</a>
+						<p>
+							{{product.price|currency}}
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
