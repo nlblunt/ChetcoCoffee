@@ -1,14 +1,25 @@
-<div ng-controller='homeController as homeCtrl'>
-	<div id="page">
-		<div>
-			<div id="header">
-				<img src="images/logo.jpg" alt="Image"></a>
+<section id="page" ng-controller='homeController as homeCtrl'>
+	<section id="content">
+		<header>
+			<img src="images/logo.jpg" alt="Image"></a>
+			<home-navbar></home-navbar>
+		</header>
+		
+		<section><home-index ng-show="homeCtrl.navIsSelected('index')"></home-index></section>
+		
+		<section><home-menu ng-show="homeCtrl.navIsSelected('menu')"></home-menu></section>
+
+		<footer>
+			<section>
+				<a href="index.html"><img src="images/logo2.jpg" alt="Image"></a>
+				<p class="footnote">
+					&copy; Chetco Coffee Roasters.<br>All Rights Reserved.
+				</p>
+			</section>
+			<section class="section">
 				<home-navbar></home-navbar>
-			</div>
-		</div>
-		
-		<div><home-index ng-show="homeCtrl.navIsSelected('index')"></home-index></div>
-		
-		<div><home-menu ng-show="homeCtrl.navIsSelected('menu')"></home-menu></div>
-	</div>
-</div>
+				<home-connect></home-connect>
+			</section>
+		<footer>
+	</section>
+</section>

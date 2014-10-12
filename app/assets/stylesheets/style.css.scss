@@ -44,28 +44,32 @@ p a {
 p a:hover {
 	color: #bfcb75;
 }
-#page {
+section#page {
 	background: url(../images/bg-page.png) repeat;
 	margin: 30px auto 0;
 	padding: 10px;
 	width: 940px;
+	box-sizing: content-box;
 }
-#page div {
+section#content{
 	background: #f5f1e6 url(../images/bg-logo.jpg) no-repeat left top;
 	padding: 0;
 	width: 940px;
 }
-#page div div#header {
+
+header {
 	background: none;
 	overflow: hidden;
 	padding: 0;
 	width: auto;
 }
-#page div div#header img {
+
+header img {
 	float: left;
 	margin: 30px 0 0 32px;
 }
-#page div div#header ul {
+
+header ul {
 	float: right;
 	list-style: none;
 	margin: 77px 0 0;
@@ -73,31 +77,33 @@ p a:hover {
 	padding: 0;
 	width: 550px;
 }
-#page div div#header ul li {
+
+header ul li {
 	float: left;
 	padding: 0 20px;
 }
-#page div div#header ul li a {
+
+header ul li a {
 	color: #db9e29;
 	display: block;
 	font-family: 'UltraRegular';
 	font-size: 14px;
 	text-decoration: none;
 }
-#page div div#header ul li.current a,
-#page div div#header ul li a:hover {
+header ul li.current a,
+header ul li a:hover {
 	border-bottom: 5px solid #344579;
 }
-#page div div#body {
+section#index {
 	background: url(../images/separator-long.png) no-repeat bottom center;
 	padding: 0 0 10px;
 }
-#page div div#body div#figure {
+section#index section#figure {
 	font-family: 'UltraRegular';
 	padding: 0;
 	position: relative;
 }
-#page div div#body div#figure span {
+section#index section#figure span {
 	color: #dade7d;
 	display: block;
 	font-size: 35px;
@@ -106,7 +112,7 @@ p a:hover {
 	top: 85px;
 	text-shadow: 1px 5px #605012;
 }
-#page div div#body div#figure span#home {
+section#index section#figure span#home {
 	color: #f9b94b;
 	font-size: 45px;
 	line-height: 45px;
@@ -114,7 +120,7 @@ p a:hover {
 	text-shadow: 1px 5px #824622;
 	width: 590px;
 }
-#page div div#body div#figure span#home a {
+section#index section#figure span#home a {
 	background: url(../images/bg-find-out.png) repeat;
 	color: #f6f1e7;
 	display: inline-block;
@@ -128,7 +134,7 @@ p a:hover {
 	text-shadow: none;
 	vertical-align: middle;
 }
-#page div div#body div#figure span#home a:hover {
+section#index section#figure span#home a:hover {
 	background: url(../images/bg-find-out-hover.png) repeat;
 }
 #page div div#body div {
@@ -426,13 +432,13 @@ p a:hover {
 	display: inline-block;
 	margin: 0 0 0 5px;
 }
-#page div div#body div.section {
+section#blog.section {
 	background: #3c200b url(../images/separator-content.jpg) no-repeat top center;
 	overflow: hidden;
 	padding: 30px 30px 0;
 	//width: 880px;	
 }
-#page div div#body div.section ul {
+section#blog.section ul {
 	float: left;
 	list-style: none;
 	margin: 0;
@@ -440,12 +446,12 @@ p a:hover {
 	padding: 20px 0 0;
 	width: 640px;
 }
-#page div div#body div.section ul li {
+section#blog.section ul li {
 	float: left;
 	margin: 0 0 0 20px;
 	width: 200px;
 }
-#page div div#body div.section ul li h2 {
+section#blog.section ul li h2 {
 	font-family: 'UltraRegular';
 	font-size: 20px;
 	font-weight: normal;
@@ -454,19 +460,19 @@ p a:hover {
 	margin: 0;
 	padding: 10px 0 13px;
 }
-#page div div#body div.section ul li h2 a {
+section#blog.section ul li h2 a {
 	color: #899148;
 	display: inline-block;
 	text-decoration: none;
 }
-#page div div#body div.section ul li p {
+section#blog.section ul li p {
 	color: #b98d6c;
 	letter-spacing: 0.025em;
 	line-height: 16px;
 	margin: 0;
 	width: 190px;
 }
-#page div div#body div.section ul li a.readmore {
+section#blog.section ul li a.readmore {
 	background: url(../images/icon-arrow.png) no-repeat left center;
 	color: #b0c26d;
 	display: inline-block;
@@ -478,32 +484,32 @@ p a:hover {
 	text-align: right;
 	text-transform: capitalize;
 }
-#page div div#body div.section ul li a.readmore:hover {
+section#blog.section ul li a.readmore:hover {
 	text-decoration: none;
 }
-#page div div#body div.section ul li:first-child {
+section#blog.section ul li:first-child {
 	margin: 0;
 }
-#page div div#body div.section ul li img {
+section#blog.section ul li img {
 	border: 3px solid #f7f0e6;
 }
-#page div div#body div.section ul li a img,
+section#blog.section ul li a img,
 #page div div#body div div ul li a img {
 	display: block;
 }
-#page div div#body div.section div {
+section#blog.section div {
 	background: url(../images/bg-recent-blog.jpg) no-repeat;
 	float: right;
 	height: 398px;
 	padding: 0;
 	width: 220px;
 }
-#page div div#body div.section div ul {
+section#blog.section div ul {
 	float: none;
 	margin: 70px 0 0;
 	width: auto;
 }
-#page div div#body div.section div ul li {
+section#blog.section div ul li {
 	background: url(../images/separator-recent-blog.jpg) no-repeat center top;
 	display: block;
 	float: none;
@@ -512,10 +518,10 @@ p a:hover {
 	padding: 12px 0 0;
 	width: 220px;
 }
-#page div div#body div.section div ul li:first-child {
+section#blog.section div ul li:first-child {
 	background: url(../images/separator-recent-blog-1st.jpg) no-repeat center top;
 }
-#page div div#body div.section div ul li h3 {
+section#blog.section div ul li h3 {
 	font-family: 'UltraRegular';
 	font-size: 14px;
 	font-weight: normal;
@@ -524,11 +530,11 @@ p a:hover {
 	margin: 0;
 	padding: 0 5px 0 20px;
 }
-#page div div#body div.section div ul li h3 a {
+section#blog.section div ul li h3 a {
 	color: #9daf4b;
 	text-decoration: none;
 }
-#page div div#body div.section div ul li span {
+section#blog.section div ul li span {
 	color: #cbca75;
 	display: block;
 	font-family: 'UltraRegular';
@@ -537,14 +543,14 @@ p a:hover {
 	line-height: 16px;
 	padding: 0 5px 5px 20px;
 }
-#page div div#body div.section div ul li p {
+section#blog.section div ul li p {
 	color: #b98d6c;
 	font-size: 12px;
 	letter-spacing: 0.025em;
 	line-height: 16px;
 	padding: 0 5px 0 20px;
 }
-#page div div#body div.section div ul li a.readmore {
+section#blog.section div ul li a.readmore {
 	background: none;
 	color: #b0c26d;
 	display: inline-block;
@@ -558,23 +564,23 @@ p a:hover {
 	text-align: left;
 	text-transform: capitalize;
 }
-#page div div#body div div#blog ul li a.readmore:hover {
+section#blog.section div ul li a.readmore:hover {
 	text-decoration: none;
 }
-#page div div#footer {
+footer {
 	background: #f5f1e6;
 	height: 120px;
 }
-#page div div#footer div {
+footer section {
 	background: none;
 	float: left;
 	margin: 20px 0 0 30px;
 	width: 190px;
 }
-#page div div#footer div a {
+footer section a {
 	display: inline-block;
 }
-#page div div#footer div p.footnote {
+footer section p.footnote {
 	color: #e2cfae;
 	font-family: 'UltraRegular';
 	font-size: 10px;
@@ -582,26 +588,26 @@ p a:hover {
 	line-height: 12px;
 	margin: 5px 0 0;
 }
-#page div div#footer div.section {
+footer section.section {
 	background: none;
 	margin: 0 0 0 30px;
 	position: relative;
 	width: 655px;
 }
-#page div div#footer div.section ul {
+footer section.section ul {
 	list-style: none;
 	margin: 30px 0 0;
 	overflow: hidden;
 	padding: 0;
 }
-#page div div#footer div.section ul li {
+footer section.section ul li {
 	border-left: 2px solid #e0ceaa;
 	float: left;
 	height: 15px;
 	line-height: 13px;
 	padding: 0 10px;
 }
-#page div div#footer div.section ul li a {
+footer section.section ul li a {
 	color: #e0ceab;
 	display: block;
 	font-family: 'UltraRegular';
@@ -609,15 +615,15 @@ p a:hover {
 	text-decoration: none;
 	text-align: center;
 }
-#page div div#footer div.section ul li.current a {
+footer section.section ul li.current a {
 	color: #becb73;
 	border-bottom: 2px solid #e8e7cb;
 }
-#page div div#footer div.section ul li:first-child {
+footer section.section ul li:first-child {
 	border: 0;
 	padding: 0 10px 0 0;
 }
-#page div div#footer div.section p {
+footer section.section p {
 	color: #c6a971;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10px;
@@ -625,13 +631,13 @@ p a:hover {
 	line-height: 13px;
 	margin: 20px 0 0;
 }
-#page div div#footer div.section p a {
+footer section.section p a {
 	color: #c6a971;
 }
-#page div div#footer div.section p a:hover {
+footer section.section p a:hover {
 	color: #91a130;
 }
-#page div div#footer div.section div#connect {
+footer section.section section#connect {
 	background: none;
 	float: none;
 	height: 18px;
@@ -641,7 +647,7 @@ p a:hover {
 	top: 28px;
 	width: auto;
 }
-#page div div#footer div.section div#connect a {
+footer section.section section#connect a {
 	display: inline-block;
 	float: left;
 	height: 18px;
@@ -649,27 +655,27 @@ p a:hover {
 	text-indent: -99999px;
 	width: 18px;
 }
-#page div div#footer div.section div#connect a#facebook {
+footer section.section section#connect a#facebook {
 	background: url(../images/icons.png) no-repeat 0 0;
 }
-#page div div#footer div.section div#connect a#facebook:hover {
+footer section.section section#connect a#facebook:hover {
 	background: url(../images/icons.png) no-repeat -18px 0;
 }
-#page div div#footer div.section div#connect a#twitter {
+footer section.section section#connect a#twitter {
 	background: url(../images/icons.png) no-repeat 0 -28px;
 }
-#page div div#footer div.section div#connect a#twitter:hover {
+footer section.section section#connect a#twitter:hover {
 	background: url(../images/icons.png) no-repeat -18px -28px;
 }
-#page div div#footer div.section div#connect a#googleplus {
+footer section.section section#connect a#googleplus {
 	background: url(../images/icons.png) no-repeat 0 -56px;
 }
-#page div div#footer div.section div#connect a#googleplus:hover {
+footer section.section section#connect a#googleplus:hover {
 	background: url(../images/icons.png) no-repeat -18px -56px;
 }
-#page div div#footer div.section div#connect a#rss {
+footer section.section section#connect a#rss {
 	background: url(../images/icons.png) no-repeat 0 -84px;
 }
-#page div div#footer div.section div#connect a#rss:hover {
+footer section.section section#connect a#rss:hover {
 	background: url(../images/icons.png) no-repeat -18px -84px;
 }
