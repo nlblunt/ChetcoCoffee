@@ -1,6 +1,11 @@
 class Product < ActiveRecord::Base
   has_many :cart_items
   has_many :carts, through: :cart_items
+
+  #Paperlcip for product image
+  has_attached_file :image, :styles => { :medium => '300x300>'}, :default_url => '/images/:style/missing.png'
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
   validates :name, :description, presence: true
   validates :price, presence: true, numericality: {greater_than: 0}
   
