@@ -20,8 +20,8 @@ appControllers.controller('homeController', ['$scope', 'productFactory', functio
 
 appControllers.controller('adminController', ['$scope', 'adminFactory', 'productFactory', '$http', function($scope, adminFactory, productFactory, $http)
 {
-    this.session;
-    this.message;
+    var image = "";
+    //this.message;
     this.nav = 'overview';
     $scope.addProductSelected = false;
     $scope.editProductSelected = false;
@@ -29,11 +29,16 @@ appControllers.controller('adminController', ['$scope', 'adminFactory', 'product
     adminFactory.adminCheck().$promise
     .then(function(result)
         {
-            session = result;
+            //session = result;
             $scope.session = result;
         });
     
     $scope.products = productFactory.getProducts();
+
+    $scope.onFileSelect = function($files)
+    {
+        image = $files[0];
+    };
 
     this.adminLogin = function(login)
     {
@@ -46,21 +51,21 @@ appControllers.controller('adminController', ['$scope', 'adminFactory', 'product
         },
         function(reason)
         {
-            $scope.message = "Invalid username or password";
+            $scope.message = reason; //"Invalid username or password";
         });
     };
     
     this.adminLogout = function()
     {
-        adminFactory.adminLogout(session.id)
+        adminFactory.adminLogout(session.id);
 
-        session = {"id": 0};
+        //session = {"id": 0};
         $scope.session = session;
     };
 
     this.addProduct = function(product)
     {
-        productFactory.addProduct(product)
+        productFactory.addProduct(product, image)
         .then(function()
             {
                 $scope.products = productFactory.getProducts();

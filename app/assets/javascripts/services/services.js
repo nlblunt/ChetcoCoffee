@@ -54,7 +54,7 @@ appServices.factory('adminFactory', ['$resource', '$http', '$q', function($resou
     return self;
 }]);
 
-appServices.factory('productFactory', ['$resource', '$http', '$q', function($resource, $http, $q)
+appServices.factory('productFactory', ['$resource', '$http', '$q', '$upload', function($resource, $http, $q, $upload)
 {
     var self = {};
 
@@ -85,7 +85,7 @@ appServices.factory('productFactory', ['$resource', '$http', '$q', function($res
         return deferred.promise;
     };
     
-    self.addProduct = function (prod)
+    self.addProduct = function (prod, file)
     {
         //Setup deferred promise
         var deferred = $q.defer();
@@ -93,8 +93,18 @@ appServices.factory('productFactory', ['$resource', '$http', '$q', function($res
         //Create a new product object.  Save to backend.
         var newProduct = new product(prod);
 
-        newProduct.$save()
-        .then(
+
+        if(file !== "")
+        {
+            $upload.upload({
+                url: '/products',
+                headers: {'Content-Type':'multipart/form-data'},
+                data: {product: prod},
+                file: file,
+                fileName: 'image.jpg',
+                fileFormDataName: "image[image]"
+            })
+            .then(
             function()
             {
                 deferred.resolve();
@@ -103,7 +113,38 @@ appServices.factory('productFactory', ['$resource', '$http', '$q', function($res
             {
                 deferred.reject("Error");
             });
+        }
+        else
+        {
+            $upload.upload({
+                url: '/products',
+                headers: {'Content-Type':'multipart/form-data'},
+                data: {product: prod}
+            })
+            .then(
+            function()
+            {
+                deferred.resolve();
+            },
+            function()
+            {
+                deferred.reject("Error");
+            });
+        }
+
         return deferred.promise;
+
+        //newProduct.$save()
+        //.then(
+        //    function()
+        //    {
+        //        deferred.resolve();
+         //   },
+         //   function()
+        //    {
+        //        deferred.reject("Error");
+        //    });
+        //return deferred.promise;
     };
 
     self.removeProduct = function(prodID)

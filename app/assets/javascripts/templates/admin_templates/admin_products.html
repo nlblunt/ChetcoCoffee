@@ -19,6 +19,10 @@
 		<input type="text" class="form-control" id="price" ng-model="prod.price" placeholder="Product Price" required>
 	</div>
 
+    <div class="form-group">
+        <label for="image">Product Image</label>
+        <input type="file" ng-file-select="onFileSelect($files)">
+    </div>
 	<button ng-click="adminCtrl.addProduct(prod)" ng-disabled="admin_addProduct.$invalid">Add Product</button><br>
 </form>
 </div>
