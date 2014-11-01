@@ -5,10 +5,10 @@
 	</section>
 	<div>
 		<a href="menu.html" class="whatshot">What&#39;s Hot</a>
-		<div>
+		<section id="menu-list">
 			<ul>
-				<li ng-repeat="product in products">
-					<img ng-src=product.image>
+				<li class="menu-item" ng-repeat="product in products">
+					<img ng-src={{product.image}}>
 					<div>
 						<a href="">{{product.name}}</a>
 						<p>
@@ -17,6 +17,6 @@
 					</div>
 				</li>
 			</ul>
-		</div>
+		</section>
 	</div>
 </section>
