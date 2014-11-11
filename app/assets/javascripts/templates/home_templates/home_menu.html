@@ -4,13 +4,12 @@
 		<span>Roasting the best... ever.</span>
 	</section>
 	<div>
-		<a href="menu.html" class="whatshot">What&#39;s Hot</a>
-		<section id="menu-list">
-			<ul>
+		<section id="menu-section">
+			<ul id="menu-list">
 				<li class="menu-item" ng-repeat="product in products">
-					<img ng-src={{product.image}}>
+					<img class="menu-img" ng-src={{product.image}}>
 					<div>
-						<a href="">{{product.name}}</a>
+						<h4>{{product.name}}</h4>
 						<p>
 							{{product.price|currency}}
 						</p>
