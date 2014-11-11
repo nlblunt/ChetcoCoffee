@@ -3,19 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #menu-section
 {
-	background-color: #D5B084;
+	//background-color: #D5B084;
 }
 
 #menu-list
 {
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
 	padding: 0px;
 }
 .menu-item
 {
 	float: left;
-	width: 50%;
+	width: 100%;
 	list-style: none;
-	background-color: #D5B084;
+	//background-color: #D5B084;
 }
 
 .menu-img
@@ -31,10 +34,21 @@
 
 .menu-item h4
 {
-	//text-align: center;
+	text-align: center;
 	font-family: UltraRegular;
 	color: #F9B94B;
 	text-shadow: 1px 5px #824622;
+	background-color: #D5B084;
+	margin-top: 0px;
+	padding-bottom: 10px;
+}
+
+.menu-cart
+{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 20px;
 }
 footer
 {
