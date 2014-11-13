@@ -18,6 +18,8 @@ config/initializers/secret_token.rb
 /.bundle
 /vendor/bundle
 
+.c9/*
+
 # these should all be checked in to normalise the environment:
 # Gemfile.lock, .ruby-version, .ruby-gemset
 
