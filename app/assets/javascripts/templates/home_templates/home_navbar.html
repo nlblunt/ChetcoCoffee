@@ -5,10 +5,13 @@
 	<li ng-class="{current:homeCtrl.navIsSelected('menu')}">
 		<a href ng-click="homeCtrl.navSetSelected('menu')">Products</a>
 	</li>
-	<li>
-		<a href="locations.html">Locations</a>
+	<li ng-class="{current:homeCtrl.navIsSelected('location')}">
+		<a href ng-click="homeCtrl.navSetSelected('location')">Locations</a>
 	</li>
 	<li>
 		<a href="about.html">About</a>
+	</li>
+	<li>
+		<a href="signin.html">Login / Signup</a>
 	</li>
 </ul>

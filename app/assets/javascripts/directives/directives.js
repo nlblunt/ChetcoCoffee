@@ -120,3 +120,11 @@ app.directive('homeBlog', function()
 		templateUrl: 'home_templates/home_blog.html'
 	};
 });
+
+app.directive('homeLocations', function()
+{
+	return{
+		restrict: 'E',
+		templateUrl: 'home_templates/home_location.html'
+	};
+});

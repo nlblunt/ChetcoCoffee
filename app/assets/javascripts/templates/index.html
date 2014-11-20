@@ -5,10 +5,13 @@
 			<home-navbar></home-navbar>
 		</header>
 		
-		<section><home-index ng-show="homeCtrl.navIsSelected('index')"></home-index></section>
+		<section id="index"><home-index ng-show="homeCtrl.navIsSelected('index')"></home-index></section>
 		
-		<section><home-menu ng-show="homeCtrl.navIsSelected('menu')"></home-menu></section>
-
+		<section id="menu"><home-menu ng-show="homeCtrl.navIsSelected('menu')"></home-menu></section>
+		
+		
+		<section id="location"><home-locations ng-show="homeCtrl.navIsSelected('location')"></home-locations></section>
+		
 		<footer>
 			<section>
 				<a href="index.html"><img src="images/logo2.jpg" alt="Image"></a>
