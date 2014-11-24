@@ -28,6 +28,12 @@ body {
 	font-weight: normal;
 	font-style: normal;
 }
+
+#blog
+{
+	display: none;
+}
+
 a {
 	outline: none;
 }
@@ -66,21 +72,25 @@ header {
 
 header img {
 	float: left;
-	margin: 30px 0 0 32px;
+	margin: 30px 0 0 30px;
 }
 
 header ul {
 	float: right;
 	list-style: none;
-	margin: 77px 0 0;
+	margin: 30px 30px 0 0;
 	overflow: hidden;
 	padding: 0;
 	width: 550px;
+	height: 170px;
+	background-color: #F0D197;
 }
 
 header ul li {
 	float: left;
-	padding: 0 20px;
+	padding-top: 10px;
+	width: 20%;
+	vertical-align: auto;
 }
 
 header ul li a {
@@ -89,10 +99,14 @@ header ul li a {
 	font-family: 'UltraRegular';
 	font-size: 14px;
 	text-decoration: none;
+	text-align: center;
+
 }
 header ul li.current a,
 header ul li a:hover {
-	border-bottom: 5px solid #344579;
+	background-color: #F0D197;
+	color: #2D281D;
+	text-decoration: none;
 }
 section#index {
 	background: url(../images/separator-long.png) no-repeat bottom center;
