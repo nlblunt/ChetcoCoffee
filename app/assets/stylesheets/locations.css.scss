@@ -3,6 +3,7 @@
     clear: right;
     clear: left;
     float: right;
+    width: 40%;
 }
 
 div.locations
@@ -16,7 +17,18 @@ div ul
     list-style: none;
 }
 
+table.locations
+{
+    width: 55%;
+    border: 1px solid;
+    background-color: #F0D197;
+}
+
+table.locations td
+{
+    border: 1px solid #2D281D;
+}
 table tr img
 {
-   width: 100px;
+   width: 32px;
 }
