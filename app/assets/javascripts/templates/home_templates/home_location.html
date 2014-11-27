@@ -10,25 +10,25 @@
    <tr>
       <th>Location</th>
       <th>Address</th>
-      <th><img src="images/coffee1.jpg"></th>
-      <th><img src="images/coffeebag.jpg"></th>
+      <th><img alt="By The Cup" title="By The Cup" src="images/coffee1.jpg"></th>
+      <th><img alt="By The Bag" title="By The Bag" src="images/coffeebag.jpg"></th>
   </tr>
   <tr>
-      <td>A: The Vista Pub</td>
+      <td class="business">A: The Vista Pub</td>
       <td><address>1009 Chetco Ave, Brookings</address></td>
       <td>Yes</td>
       <td>Yes</td>
   </tr>
   
   <tr>
-      <td>B: Farmers Market: Wednesdays</td>
+      <td class="business">B: Farmers Market: Wednesdays</td>
       <td><address>97895 Shopping Center Ave, Brookings</address></td>
       <td>Yes</td>
       <td>Yes</td>
   </tr>
   
   <tr>
-      <td>C: Smokehouse on 101</td>
+      <td class="business">C: Smokehouse on 101</td>
       <td><address>15675 Highway 101, Brookings</address></td>
       <td>No</td>
       <td>Yes</td>
@@ -38,9 +38,30 @@
 </div>
 
 <div class="locations" id="colifornia">
-    <h3>Find us in California</h3>
-    <ul>
-        <li>Alisas Custom Coffee (By the cup)</li>
-        <li>Wild Rivers Market</li>
-    </ul>
+    <img class="location-map" ng-src="https://maps.googleapis.com/maps/api/staticmap?center=Crescent+City,CA&size=400x400&key=AIzaSyBSPnNJHEAwPZ6MpmP35KhlVW5ft9l_mnw
+    &markers=label:A%7Ccolor:red%7C1070+US+Highway+101,Crescent+City,CA
+    &markers=label:B%7C450+M+St,Crescent+City,CA">
+    
+    <table class="locations">
+    <caption>Find us in California</caption>
+   <tr>
+      <th>Location</th>
+      <th>Address</th>
+      <th><img alt="By The Cup" title="By The Cup" src="images/coffee1.jpg"></th>
+      <th><img alt="By The Bag" title="By The Bag" src="images/coffeebag.jpg"></th>
+  </tr>
+  <tr>
+      <td class="business">A: Alisa's Custom Coffee</td>
+      <td><address>1070 US Highway 101, Crescent City</address></td>
+      <td>Yes</td>
+      <td>No</td>
+  </tr>
+  
+  <tr>
+      <td class="business">B: Wild Rivers Market</td>
+      <td><address>450 M St, Crescent City</address></td>
+      <td>Yes</td>
+      <td>Yes</td>
+  </tr>
+</table>
 </div>
